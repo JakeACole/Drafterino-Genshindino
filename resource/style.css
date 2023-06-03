@@ -1,0 +1,125 @@
+body {
+    background-color: rgb(22, 22, 22)
+}
+
+.draft-frame {
+    width: 80%;
+    background-color: rgb(60, 60, 60);
+    margin: auto;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.draft-window {
+    color: white;
+    min-height: 200px;
+    text-align: center;
+}
+
+.draft-selected {
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 49%;
+    min-height: 200px;
+}
+
+/*
+.draft-selected > .character-window > .character-icon:first-child {
+    box-shadow: 0 0 30px white;
+}
+*/
+
+.player-1-window {
+    background-color: darkcyan
+}
+
+.player-2-window {
+    background-color: darkred
+}
+
+.character-pool-frame {
+    text-align: center;
+    color: white;
+}
+
+.character-window {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-icon {
+    border-radius: 5px;
+    margin: 1px;
+    transition-duration: 0.4s;
+}
+
+.character-icon:hover {
+    box-shadow: 0 0 30px white;
+}
+
+.character-icon > img.char-icon {
+    border-radius: 5px;
+    border: 2px solid white;
+    width: 100px;
+    height: auto;
+}
+
+.character-icon > img.element-icon {
+    position: relative;
+    margin-right: -25px;
+    height: 25px;
+    width: auto;
+    border-radius: 30%;
+    background-color: rgba(255,255,255,0.9);
+    left: -101px;
+    bottom: 3px;
+    z-index: 1;
+}
+
+.character-icon.five-star {
+    background-color: #dca454
+}
+
+.character-icon.four-star {
+    background-color: #9174a9
+}
+
+.character-icon.three-star {
+    background-color: #54a4b4 
+}
+
+.draft-button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    background-color: #4caf50;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    transition-duration: 0.4s;
+}
+
+.draft-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
+}
+
+.draft-button.active {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px white;
+}
