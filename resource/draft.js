@@ -40,6 +40,14 @@ function generate_character_div(character) {
         new_element_img.classList.add('element-icon');
         new_char_div.appendChild(new_element_img);
     }
+    
+    if (character.role != "none") {
+        let new_role_img = document.createElement('img');
+        new_role_img.src = "resource/role-" + character.role + ".webp";
+        new_role_img.classList.add('role-icon');
+        new_char_div.appendChild(new_role_img);
+    }
+    
     return new_char_div;
 }
 

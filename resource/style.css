@@ -99,6 +99,18 @@ body {
     z-index: 1;
 }
 
+.character-icon > img.role-icon {
+    position: relative;
+    margin-right: -25px;
+    height: auto;
+    width: 25px;
+    border-radius: 30%;
+    background-color: rgba(0,0,0,0.9);
+    left: -26px;
+    bottom: 3px;
+    z-index: 1;
+}
+
 .character-icon.five-star {
     background-color: #dca454
 }

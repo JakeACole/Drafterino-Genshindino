@@ -3,6 +3,7 @@
     "name": "albedo",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Albedo_Icon.webp",
     "alt_icons": [],
     "element": "geo"
@@ -11,6 +12,7 @@
     "name": "alhaitham",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "primary-damage"
     "icon": "Alhaitham_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -19,6 +21,7 @@
     "name": "aloy",
     "star_rarity": 3,
     "region": "none",
+    "role": "quick-swap"
     "icon": "Aloy_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -27,6 +30,7 @@
     "name": "amber",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Amber_Icon.webp",
     "alt_icons": ["100%2525_Outrider_Icon.webp"],
     "element": "pyro"
@@ -35,6 +39,7 @@
     "name": "arataki-itto",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Arataki_Itto_Icon.webp",
     "alt_icons": [],
     "element": "geo"
@@ -43,6 +48,7 @@
     "name": "baizhu",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "healer"
     "icon": "Baizhu_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -51,6 +57,7 @@
     "name": "barbara",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "healer"
     "icon": "Barbara_Icon.webp",
     "alt_icons": ["Summertime_Sparkle_Icon.webp"],
     "element": "hydro"
@@ -59,6 +66,7 @@
     "name": "beidou",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Beidou_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -67,6 +75,7 @@
     "name": "bennett",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "healer"
     "icon": "Bennett_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -75,6 +84,7 @@
     "name": "candace",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Candace_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -83,6 +93,7 @@
     "name": "chongyun",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Chongyun_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -91,6 +102,7 @@
     "name": "collei",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Collei_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -99,6 +111,7 @@
     "name": "cyno",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "primary-damage"
     "icon": "Cyno_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -107,6 +120,7 @@
     "name": "dehya",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Dehya_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -115,6 +129,7 @@
     "name": "diluc",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "primary-damage"
     "icon": "Diluc_Icon.webp",
     "alt_icons": ["Red_Dead_of_Night_Icon.webp"],
     "element": "pyro"
@@ -123,6 +138,7 @@
     "name": "diona",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "healer"
     "icon": "Diona_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -131,6 +147,7 @@
     "name": "dori",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "healer"
     "icon": "Dori_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -139,6 +156,7 @@
     "name": "eula",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "primary-damage"
     "icon": "Eula_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -147,6 +165,7 @@
     "name": "faruzan",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Faruzan_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -155,6 +174,7 @@
     "name": "fischl",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Fischl_Icon.webp",
     "alt_icons": ["Ein_Immernachtstraum_Icon.webp"],
     "element": "electro"
@@ -163,6 +183,7 @@
     "name": "ganyu",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Ganyu_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -171,6 +192,7 @@
     "name": "gorou",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "quick-swap"
     "icon": "Gorou_Icon.webp",
     "alt_icons": [],
     "element": "geo"
@@ -179,6 +201,7 @@
     "name": "hu-tao",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Hu_Tao_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -187,6 +210,7 @@
     "name": "jean",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "healer"
     "icon": "Jean_Icon.webp",
     "alt_icons": ["Sea_Breeze_Dandelion_Icon.webp", "Gunnhildr%2527s_Legacy_Icon.webp"],
     "element": "anemo"
@@ -195,6 +219,7 @@
     "name": "kaedehara-kazuha",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "quick-swap"
     "icon": "Kaedehara_Kazuha_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -203,6 +228,7 @@
     "name": "kaeya",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Kaeya_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -211,6 +237,7 @@
     "name": "kamisato-ayaka",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Kamisato_Ayaka_Icon.webp",
     "alt_icons": ["Springbloom_Missive_Icon.webp"],
     "element": "cryo"
@@ -219,6 +246,7 @@
     "name": "kamisato-ayato",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Kamisato_Ayato_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -227,6 +255,7 @@
     "name": "kaveh",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "primary-damage"
     "icon": "Kaveh_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -235,6 +264,7 @@
     "name": "keqing",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Keqing_Icon.webp",
     "alt_icons": ["Opulent_Splendor_Icon.webp"],
     "element": "electro"
@@ -243,6 +273,7 @@
     "name": "kirara",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "shielder"
     "icon": "Kirara_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -251,6 +282,7 @@
     "name": "klee",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "primary-damage"
     "icon": "Klee_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -259,6 +291,7 @@
     "name": "kujou-sara",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "quick-swap"
     "icon": "Kujou_Sara_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -267,6 +300,7 @@
     "name": "kuki-shinobu",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "healer"
     "icon": "Kuki_Shinobu_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -275,6 +309,7 @@
     "name": "layla",
     "star_rarity": 4,
     "region": "sumeru",
+    "role": "shielder"
     "icon": "Layla_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -283,6 +318,7 @@
     "name": "lisa",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Lisa_Icon.webp",
     "alt_icons": ["A_Sobriquet_Under_Shade_Icon.webp"],
     "element": "electro"
@@ -291,6 +327,7 @@
     "name": "mika",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Mika_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -299,6 +336,7 @@
     "name": "mona",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Mona_Icon.webp",
     "alt_icons": ["Pact_of_Stars_and_Moon_Icon.webp"],
     "element": "hydro"
@@ -307,6 +345,7 @@
     "name": "nahida",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Nahida_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -315,6 +354,7 @@
     "name": "nilou",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "quick-swap"
     "icon": "Nilou_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -323,6 +363,7 @@
     "name": "ningguang",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Ningguang_Icon.webp",
     "alt_icons": ["Orchid%2527s_Evening_Gown_Icon.webp"],
     "element": "geo"
@@ -331,6 +372,7 @@
     "name": "noelle",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "healer"
     "icon": "Noelle_Icon.webp",
     "alt_icons": [],
     "element": "geo"
@@ -339,6 +381,7 @@
     "name": "qiqi",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "healer"
     "icon": "Qiqi_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -347,6 +390,7 @@
     "name": "raiden-shogun",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Raiden_Shogun_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -355,6 +399,7 @@
     "name": "razor",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "primary-damage"
     "icon": "Razor_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -363,6 +408,7 @@
     "name": "rosaria",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Rosaria_Icon.webp",
     "alt_icons": ["To_the_Church%2527s_Free_Spirit_Icon.webp"],
     "element": "cryo"
@@ -371,6 +417,7 @@
     "name": "sangonomiya-kokomi",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "healer"
     "icon": "Sangonomiya_Kokomi_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -379,6 +426,7 @@
     "name": "sayu",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "healer"
     "icon": "Sayu_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -387,6 +435,7 @@
     "name": "shenhe",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Shenhe_Icon.webp",
     "alt_icons": [],
     "element": "cryo"
@@ -395,6 +444,7 @@
     "name": "shikanoin-heizou",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Shikanoin_Heizou_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -403,6 +453,7 @@
     "name": "sucrose",
     "star_rarity": 4,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Sucrose_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -411,6 +462,7 @@
     "name": "tartaglia",
     "star_rarity": 5,
     "region": "snezhnaya",
+    "role": "primary-damage"
     "icon": "Tartaglia_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -419,6 +471,7 @@
     "name": "thoma",
     "star_rarity": 4,
     "region": "inazuma",
+    "role": "healer"
     "icon": "Thoma_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -427,6 +480,7 @@
     "name": "tighnari",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "primary-damage"
     "icon": "Tighnari_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -435,6 +489,7 @@
     "name": "traveler",
     "star_rarity": 5,
     "region": "none",
+    "role": "quick-swap"
     "icon": "Traveler_Icon.webp",
     "alt_icons": ["Aether_Icon.webp", "Lumine_Icon.webp"],
     "element": "none"
@@ -443,6 +498,7 @@
     "name": "venti",
     "star_rarity": 5,
     "region": "monstadt",
+    "role": "quick-swap"
     "icon": "Venti_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -451,6 +507,7 @@
     "name": "wanderer",
     "star_rarity": 5,
     "region": "sumeru",
+    "role": "primary-damage"
     "icon": "Wanderer_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -459,6 +516,7 @@
     "name": "xiangling",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Xiangling_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -467,6 +525,7 @@
     "name": "xiao",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Xiao_Icon.webp",
     "alt_icons": [],
     "element": "anemo"
@@ -475,6 +534,7 @@
     "name": "xingqiu",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Xingqiu_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -483,6 +543,7 @@
     "name": "xinyan",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "shielder"
     "icon": "Xinyan_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -491,6 +552,7 @@
     "name": "yae-miko",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "quick-swap"
     "icon": "Yae_Miko_Icon.webp",
     "alt_icons": [],
     "element": "electro"
@@ -499,6 +561,7 @@
     "name": "yanfei",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "primary-damage"
     "icon": "Yanfei_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -507,6 +570,7 @@
     "name": "yaoyao",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "healer"
     "icon": "Yaoyao_Icon.webp",
     "alt_icons": [],
     "element": "dendro"
@@ -515,6 +579,7 @@
     "name": "yelan",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Yelan_Icon.webp",
     "alt_icons": [],
     "element": "hydro"
@@ -523,6 +588,7 @@
     "name": "yoimiya",
     "star_rarity": 5,
     "region": "inazuma",
+    "role": "primary-damage"
     "icon": "Yoimiya_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
@@ -531,6 +597,7 @@
     "name": "yun-jin",
     "star_rarity": 4,
     "region": "liyue",
+    "role": "quick-swap"
     "icon": "Yun_Jin_Icon.webp",
     "alt_icons": [],
     "element": "geo"
@@ -539,6 +606,7 @@
     "name": "zhongli",
     "star_rarity": 5,
     "region": "liyue",
+    "role": "shielder"
     "icon": "Zhongli_Icon.webp",
     "alt_icons": [],
     "element": "geo"
