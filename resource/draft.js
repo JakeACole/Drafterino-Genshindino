@@ -125,7 +125,7 @@ function goto_abyss() {
     });
 
     let querystring = '?p1=' + p1_chars.join(',') + '&p2=' + p2_chars.join(',');
-    window.location = location.href + "abyss.html" + querystring;
+    window.location = location.origin + location.pathname + "abyss.html" + querystring;
 }
 
 window.onload = (event) => {
