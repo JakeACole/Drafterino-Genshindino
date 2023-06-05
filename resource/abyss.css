@@ -1,0 +1,81 @@
+.abyss-window {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.abyss-floor-frame {
+    margin-top: 5px;
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 47%;
+    min-height: 200px;
+}
+
+.abyss-side-frame {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+.abyss-side-frame > .character-window {
+    margin-right: auto;
+}
+
+.abyss-side-frame > button {
+    margin-right: auto;
+}
+
+.abyss-floor-label {
+    color: white;
+    width: 50%;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 5px 5px 5px;
+    
+    border-radius: 0px 0px 5px 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.abyss-button {
+    background-color: #4caf50;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    transition-duration: 0.4s;
+}
+
+
+.abyss-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
+}
+
+.abyss-button.active {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px white;
+}
+
+.character-icon.char-banned {
+    opacity: 0.3;
+}

@@ -15,6 +15,12 @@ body {
     color: white;
     min-height: 200px;
     text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .draft-selected {
@@ -24,6 +30,8 @@ body {
     border-radius: 5px;
     width: 49%;
     min-height: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /*
@@ -31,6 +39,14 @@ body {
     box-shadow: 0 0 30px white;
 }
 */
+
+.character-pool-frame > button {
+    margin-bottom: 10px;
+}
+
+.draft-selected > button {
+    margin-bottom: 10px;
+}
 
 .player-1-window {
     background-color: darkcyan
@@ -43,10 +59,10 @@ body {
 .character-pool-frame {
     text-align: center;
     color: white;
+    padding-top: 25px;
 }
 
 .character-window {
-    margin-bottom: 25px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -96,9 +112,6 @@ body {
 }
 
 .draft-button {
-    margin-top: 25px;
-    margin-bottom: 25px;
-
     background-color: #4caf50;
     border: 2px solid white;
     border-radius: 5px;
@@ -122,4 +135,17 @@ body {
     background-color: white;
     color: black;
     box-shadow: 0 0 20px white;
+}
+
+.top-button {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgb(105, 31, 112);
+    box-shadow: 0 0 30px white;
+}
+
+.top-button:hover {
+    border: 2px solid rgb(105, 31, 112);
 }

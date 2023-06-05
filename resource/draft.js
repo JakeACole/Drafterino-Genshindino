@@ -105,15 +105,43 @@ function set_active_section(button_node) {
     active_section = button_node.parentElement.querySelector('.character-window');
 }
 
+function goto_abyss() {
+    let p1_pool_node = document.getElementById('character-pool-p1');
+    let p2_pool_node = document.getElementById('character-pool-p2');
+
+    let p1_chars = [];
+    let p2_chars = [];
+
+    let p1_character_nodes = Array.from(p1_pool_node.children);
+    p1_character_nodes.forEach(node => {
+        let char_img = node.querySelector('img.char-icon');
+        p1_chars.push(char_img.alt);
+    });
+
+    let p2_character_nodes = Array.from(p2_pool_node.children);
+    p2_character_nodes.forEach(node => {
+        let char_img = node.querySelector('img.char-icon');
+        p2_chars.push(char_img.alt);
+    });
+
+    let querystring = '?p1=' + p1_chars.join(',') + '&p2=' + p2_chars.join(',');
+    window.location = location.href + "abyss.html" + querystring;
+}
+
 window.onload = (event) => {
     populate_portraits();
 
     // set listeners for the buttons
-    let buttons = document.querySelectorAll("button.draft-button");
+    let buttons = document.querySelectorAll("button.draft-button:not(.disabled-button)");
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
             set_active_section(event.target);
         });
+    });
+
+    let goto_button = document.getElementById('goto-abyss');
+    goto_button.addEventListener('click', (event) => {
+        goto_abyss();
     });
 };
 
