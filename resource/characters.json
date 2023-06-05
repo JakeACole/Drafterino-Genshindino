@@ -471,7 +471,7 @@
     "name": "thoma",
     "star_rarity": 4,
     "region": "inazuma",
-    "role": "healer",
+    "role": "shielder",
     "icon": "Thoma_Icon.webp",
     "alt_icons": [],
     "element": "pyro"
