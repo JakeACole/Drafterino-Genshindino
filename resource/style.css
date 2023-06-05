@@ -105,8 +105,8 @@ body {
     height: auto;
     width: 25px;
     border-radius: 30%;
-    background-color: rgba(0,0,0,0.9);
-    left: -26px;
+    background-color: rgba(0,0,0,0.8);
+    left: -27px;
     bottom: 3px;
     z-index: 1;
 }
