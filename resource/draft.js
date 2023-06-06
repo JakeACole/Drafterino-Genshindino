@@ -1,6 +1,7 @@
 var character_data = [];
 var character_map = {};
-
+var last_sort = '';
+var sort_direction = 1;
 var active_section = null;
 
 const url_params = new URLSearchParams(window.location.search);
@@ -141,18 +142,27 @@ function sort_characters(key) {
     let avail_list = document.getElementById("character-pool-available");
     let char_list = avail_list.children;
 
+    if(last_sort == key) {
+        sort_direction = sort_direction * -1;
+    }
+    else {
+        sort_direction = 1;
+    }
+
     let char_array = Array.from(char_list);
     char_array.sort((a, b) => {
         let name_a = a.querySelector("img.char-icon").alt;
         let name_b = b.querySelector("img.char-icon").alt;
 
         return character_map[name_a][key] == character_map[name_b][key] ? 0 
-            : (character_map[name_a][key] > character_map[name_b][key] ? 1 : -1);
+            : (character_map[name_a][key] > character_map[name_b][key] ? 1*sort_direction : -1*sort_direction);
     });
 
     char_array.forEach(char_node => {
         avail_list.appendChild(char_node);
     });
+
+    last_sort = key;
 }
 
 window.addEventListener('load', (event) => {
