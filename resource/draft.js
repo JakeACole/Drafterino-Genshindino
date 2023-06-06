@@ -1,4 +1,4 @@
-import character_data from './characters.json' assert {type: 'json'};
+var character_data = [];
 
 var active_section = null;
 
@@ -137,7 +137,11 @@ function goto_abyss() {
 }
 
 window.onload = (event) => {
-    populate_portraits();
+
+    fetch("resource/characters.json").then(res => res.json()).then(data => {
+        character_data = data;
+        populate_portraits();
+    });
 
     // set listeners for the buttons
     let buttons = document.querySelectorAll("button.draft-button:not(.disabled-button)");

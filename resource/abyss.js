@@ -1,4 +1,4 @@
-import character_data from './characters.json' assert {type: 'json'};
+var character_data = [];
 
 var active_section = null;
 var char_map = {};
@@ -153,14 +153,42 @@ function set_active_section(button_node) {
     active_section = button_node.parentElement.querySelector('.character-window');
 }
 
+function toggle_floor_visibility(label_elem) {
+    let team_nodes = label_elem.parentElement.querySelectorAll(".abyss-side-frame");
+    team_nodes.forEach(team_node => {
+        team_node.classList.toggle("minimized");
+        // toggle other side as well
+        if (team_node.id.includes("p1")) {
+            let otherside_id = team_node.id.replace("p1", "p2");
+            let otherside_node = document.getElementById(otherside_id);
+            otherside_node.classList.toggle("minimized");
+        }
+        else {
+            let otherside_id = team_node.id.replace("p2", "p1");
+            let otherside_node = document.getElementById(otherside_id);
+            otherside_node.classList.toggle("minimized");
+        }
+    });
+}
+
 window.onload = (event) => {
-    populate_portraits();
+    fetch("resource/characters.json").then(res => res.json()).then(data => {
+        character_data = data;
+        populate_portraits();
+    });
 
     // set listeners for the buttons
     let buttons = document.querySelectorAll("button.abyss-button:not(.disabled-button)");
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
             set_active_section(event.target);
+        });
+    });
+
+    let labels = document.querySelectorAll(".abyss-floor-label");
+    labels.forEach(label => {
+        label.addEventListener('click', (event) => {
+            toggle_floor_visibility(event.target);
         });
     });
 
