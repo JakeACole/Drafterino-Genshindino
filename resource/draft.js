@@ -1,4 +1,5 @@
 var character_data = [];
+var character_map = {};
 
 var active_section = null;
 
@@ -76,6 +77,7 @@ function populate_portraits() {
     }
 
     character_data.forEach(character => {
+        character_map[character.name] = character;
         let new_char_div = generate_character_div(character);
         if (p1_chars.includes(character.name)) {
             p1_pool.appendChild(new_char_div);
@@ -91,7 +93,6 @@ function populate_portraits() {
         }
         new_char_div.addEventListener('click', (event) => {
             let elem = event.target;
-            console.log(elem);
             if (elem.nodeName == 'IMG') {
                 elem = elem.parentElement;
             }
@@ -136,11 +137,30 @@ function goto_abyss() {
     window.location = location.origin + location.pathname + "abyss.html" + querystring;
 }
 
-window.onload = (event) => {
+function sort_characters(key) {
+    let avail_list = document.getElementById("character-pool-available");
+    let char_list = avail_list.children;
+
+    let char_array = Array.from(char_list);
+    char_array.sort((a, b) => {
+        let name_a = a.querySelector("img.char-icon").alt;
+        let name_b = b.querySelector("img.char-icon").alt;
+
+        return character_map[name_a][key] == character_map[name_b][key] ? 0 
+            : (character_map[name_a][key] > character_map[name_b][key] ? 1 : -1);
+    });
+
+    char_array.forEach(char_node => {
+        avail_list.appendChild(char_node);
+    });
+}
+
+window.addEventListener('load', (event) => {
 
     fetch("resource/characters.json").then(res => res.json()).then(data => {
         character_data = data;
         populate_portraits();
+        enableDragSort('drag-sort-enable');
     });
 
     // set listeners for the buttons
@@ -155,5 +175,12 @@ window.onload = (event) => {
     goto_button.addEventListener('click', (event) => {
         goto_abyss();
     });
-};
+
+    let sort_buttons = document.querySelectorAll("button.sort-button");
+    sort_buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            sort_characters(event.target.id.replace("sort-by-", ""));
+        });
+    });
+});
 

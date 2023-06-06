@@ -175,6 +175,7 @@ window.onload = (event) => {
     fetch("resource/characters.json").then(res => res.json()).then(data => {
         character_data = data;
         populate_portraits();
+        enableDragSort('drag-sort-enable');
     });
 
     // set listeners for the buttons

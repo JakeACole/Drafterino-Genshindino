@@ -161,3 +161,43 @@ body {
 .top-button:hover {
     border: 2px solid rgb(105, 31, 112);
 }
+
+.drag-sort-active {
+    opacity: 0.3;
+}
+
+.sort-options {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sort-options > * {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.sort-label {
+    font-family: sans-serif;
+}
+
+.sort-button {
+    background-color: #6d6d6d;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+
+    transition-duration: 0.4s;
+}
+
+.sort-button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #000000;
+}

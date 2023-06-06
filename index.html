@@ -9,27 +9,35 @@
         <div class="draft-window">
             <div id="window-p1" class="draft-selected player-1-window">
                 <button id="button-p1" class="draft-button">Player One</button>
-                <div id="character-pool-p1" class="character-window"></div>
+                <div id="character-pool-p1" class="character-window drag-sort-enable"></div>
             </div>
             <div id="window-p2" class="draft-selected player-2-window">
                 <button id="button-p2" class="draft-button">Player Two</button>
-                <div id="character-pool-p2" class="character-window"></div>
+                <div id="character-pool-p2" class="character-window drag-sort-enable"></div>
             </div>
         </div>
         <div class="character-pool-frame">
             <button id="button-avail" class="draft-button">Available Characters</button>
-            <div id="character-pool-available" class="character-window">
+            <div id="sort-options" class="sort-options">
+                <span id="sort-text" class="sort-label">Sort by: </span>
+                <button id="sort-by-name" class="sort-button">Name</button>
+                <button id="sort-by-element" class="sort-button">Element</button>
+                <button id="sort-by-role" class="sort-button">Role</button>
+                <button id="sort-by-region" class="sort-button">Region</button>
+            </div>
+            <div id="character-pool-available" class="character-window drag-sort-enable">
                 <!-- all character portraits get populated here -->
             </div>
         </div>
         <div class="character-pool-frame">
             <button id="button-unavail" class="draft-button">Unavailable Characters</button>
-            <div id="character-pool-unavailable" class="character-window">
+            <div id="character-pool-unavailable" class="character-window drag-sort-enable">
 
             </div>
         </div>
     </div>
 
+    <script src="resource/drag.js"></script>
     <script src="resource/draft.js"></script>
 </body>
 </html>
