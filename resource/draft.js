@@ -3,6 +3,11 @@ var character_map = {};
 var last_sort = '';
 var sort_direction = 1;
 var active_section = null;
+var saved_chars = {
+    'p1': [],
+    'p2': [],
+    'unavail': []
+};
 
 const url_params = new URLSearchParams(window.location.search);
 
@@ -53,40 +58,76 @@ function generate_character_div(character) {
     return new_char_div;
 }
 
+function move_character(elem) {
+    if (active_section && elem.parentElement != active_section)
+    {
+        let prev_section = elem.parentElement.id.replace('character-pool-','');
+        let new_section = active_section.id.replace('character-pool-','');
+        let char_name = elem.querySelector("img.char-icon").alt;
+        if (prev_section != 'available') {
+            let prev_index = saved_chars[prev_section].indexOf(char_name);
+            if (prev_index != -1) {
+                saved_chars[prev_section].splice(prev_index, 1);
+                document.cookie = prev_section + '=' + JSON.stringify(saved_chars[prev_section]);
+            }
+        }
+        if (new_section != 'available') {
+            saved_chars[new_section].push(char_name);
+            document.cookie = new_section + '=' + JSON.stringify(saved_chars[new_section]);
+        }
+        elem.parentElement.removeChild(elem);
+        active_section.appendChild(elem);
+    }
+}
+
 function populate_portraits() {
 
     // populate the 'character-pool-available' div with all portraits
     let avail_pool = document.getElementById('character-pool-available');
-    let unavail_pool = document.getElementById('character-pool-unavailable');
+    let unavail_pool = document.getElementById('character-pool-unavail');
     let p1_pool = document.getElementById('character-pool-p1');
     let p2_pool = document.getElementById('character-pool-p2');
     
-    let p1_chars = [];
+    let previous_data = document.cookie.split('; ');
+    previous_data.forEach(cookie_val => {
+        if(cookie_val.startsWith('p1=')) {
+            saved_chars['p1'] = JSON.parse(cookie_val.replace('p1=',''));
+        }
+        if(cookie_val.startsWith('p2=')) {
+            saved_chars['p2'] = JSON.parse(cookie_val.replace('p2=',''));
+        }
+        if(cookie_val.startsWith('unavail=')) {
+            saved_chars['unavail'] = JSON.parse(cookie_val.replace('unavail=',''));
+        }
+    });
+
     let p1_str = url_params.get('p1');
     if (p1_str) {
-        p1_chars = p1_str.split(',');
+        saved_chars['p1'] = saved_chars['p1'].concat(p1_str.split(','));
     }
-    let p2_chars = [];
     let p2_str = url_params.get('p2');
     if (p2_str) {
-        p2_chars = p2_str.split(',');
+        saved_chars['p2'] = saved_chars['p2'].concat(p2_str.split(','));
     }
-    let unavail_chars = [];
     let unavail_str = url_params.get('unavail');
     if (unavail_str) {
-        unavail_chars = unavail_str.split(',');
+        saved_chars['unavail'] = saved_chars['unavail'].concat(unavail_str.split(','));
     }
+    
+    ['p1', 'p2', 'unavail'].forEach(key => {
+        document.cookie = key + '=' + JSON.stringify(saved_chars[key]);
+    });
 
     character_data.forEach(character => {
         character_map[character.name] = character;
         let new_char_div = generate_character_div(character);
-        if (p1_chars.includes(character.name)) {
+        if (saved_chars['p1'].includes(character.name)) {
             p1_pool.appendChild(new_char_div);
         }
-        else if (p2_chars.includes(character.name)) {
+        else if (saved_chars['p2'].includes(character.name)) {
             p2_pool.appendChild(new_char_div);
         }
-        else if (unavail_chars.includes(character.name)) {
+        else if (saved_chars['unavail'].includes(character.name)) {
             unavail_pool.appendChild(new_char_div);
         }
         else {
@@ -97,11 +138,7 @@ function populate_portraits() {
             if (elem.nodeName == 'IMG') {
                 elem = elem.parentElement;
             }
-            if (active_section && elem.parentElement != active_section)
-            {
-                elem.parentElement.removeChild(elem);
-                active_section.appendChild(elem);
-            }
+            move_character(elem);
         });
     });
 }
@@ -165,6 +202,18 @@ function sort_characters(key) {
     last_sort = key;
 }
 
+function reset_teams() {
+    let prev_active_section = active_section;
+    active_section = document.getElementById('character-pool-available');
+    Array.from(document.getElementById('character-pool-p1').children).forEach(char => {
+        move_character(char);
+    });
+    Array.from(document.getElementById('character-pool-p2').children).forEach(char => {
+        move_character(char);
+    });
+    active_section = prev_active_section;
+}
+
 window.addEventListener('load', (event) => {
 
     fetch("resource/characters.json").then(res => res.json()).then(data => {
@@ -184,6 +233,11 @@ window.addEventListener('load', (event) => {
     let goto_button = document.getElementById('goto-abyss');
     goto_button.addEventListener('click', (event) => {
         goto_abyss();
+    });
+
+    let reset_button = document.getElementById('reset-teams');
+    reset_button.addEventListener('click', (event) => {
+        reset_teams();
     });
 
     let sort_buttons = document.querySelectorAll("button.sort-button");
