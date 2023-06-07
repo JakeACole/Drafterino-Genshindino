@@ -171,6 +171,10 @@ function toggle_floor_visibility(label_elem) {
     });
 }
 
+function goto_draft() {
+    window.location = window.location.href.replace("abyss.html", "");
+}
+
 window.onload = (event) => {
     fetch("resource/characters.json").then(res => res.json()).then(data => {
         character_data = data;
@@ -196,6 +200,11 @@ window.onload = (event) => {
     let abyss_team_elems = document.querySelectorAll(".abyss-side-frame");
     abyss_team_elems.forEach(elem => {
         abyss_teams[elem.id] = [];
+    });
+    
+    let goto_button = document.getElementById('goto-draft');
+    goto_button.addEventListener('click', (event) => {
+        goto_draft();
     });
 };
 
