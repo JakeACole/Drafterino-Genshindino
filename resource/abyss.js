@@ -71,6 +71,27 @@ function ban_character(character_element) {
     }
 }
 
+function set_captain(character_element) {
+    let crown = character_element.parentElement.querySelector('.character-icon>img.crown-icon');
+    crown.parentElement.removeChild(crown);
+    character_element.appendChild(crown);
+
+    // adjust crown in team lineups
+    let team_crowns = document.querySelectorAll('.abyss-side-frame>.character-window>.character-icon>img.crown-icon');
+    team_crowns.forEach(team_crown => {
+        team_crown.parentElement.removeChild(team_crown);
+    });
+
+    // add crown to proper character
+    let captain_name = character_element.querySelector('.character-icon>img.char-icon').alt;
+    let team_characters = document.querySelectorAll('.abyss-side-frame>.character-window>.character-icon>img.char-icon');
+    team_characters.forEach(team_character => {
+        if (team_character.alt == captain_name) {
+            team_character.parentElement.appendChild(crown.cloneNode(true));
+        }
+    });
+}
+
 function add_to_team(character_element) {
     let char_name = character_element.querySelector('img.char-icon').alt;
     if (!active_section || character_element.classList.contains("char-banned")) return;
@@ -142,6 +163,14 @@ function populate_portraits() {
             char_map[character.name] = character;
         }
     });
+
+    // add crown
+    let crown_img = document.createElement('img');
+    crown_img.src = "resource/Item_Crown_of_Insight.webp";
+    crown_img.classList.add('crown-icon');
+    document.getElementById('character-pool-p1').firstElementChild.appendChild(crown_img);
+    let p2_crown = crown_img.cloneNode(true);
+    document.getElementById('character-pool-p2').firstElementChild.appendChild(p2_crown);
 }
 
 function set_active_section(button_node) {
@@ -180,6 +209,20 @@ window.onload = (event) => {
         character_data = data;
         populate_portraits();
         enableDragSort('drag-sort-enable');
+        const p1_observer = new MutationObserver((mutationList) => {
+            if (mutationList[0].type == 'childList') {
+                let p1_captain = document.getElementById('character-pool-p1').firstElementChild;
+                set_captain(p1_captain);
+            }
+        });
+        const p2_observer = new MutationObserver((mutationList) => {
+            if (mutationList[0].type == 'childList') {
+                let p2_captain = document.getElementById('character-pool-p2').firstElementChild;
+                set_captain(p2_captain);
+            }
+        });
+        p1_observer.observe(document.getElementById('character-pool-p1'), {childList: true});
+        p2_observer.observe(document.getElementById('character-pool-p2'), {childList: true});
     });
 
     // set listeners for the buttons

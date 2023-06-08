@@ -88,3 +88,17 @@
 .character-icon.char-banned {
     opacity: 0.3;
 }
+
+.character-icon > img.crown-icon {
+    position: relative;
+    margin-right: -50px;
+    height: auto;
+    width: 50px;
+    left: -52px;
+    bottom: 65px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255);
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
