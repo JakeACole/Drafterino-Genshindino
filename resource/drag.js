@@ -17,9 +17,6 @@ function enableDragSort(listClass) {
   
   function handleDrag(item) {
     let selectedItem = item.target;
-    if(!selectedItem.classList.contains('draggable')) {
-        selectedItem = selectedItem.parentElement;
-    }
 
     list = selectedItem.parentElement,
     x = event.clientX,
@@ -27,24 +24,20 @@ function enableDragSort(listClass) {
     
     selectedItem.classList.add('drag-sort-active');
     let swapItem = document.elementFromPoint(x, y) === null ? selectedItem : document.elementFromPoint(x, y);
-    if (swapItem.parentElement) {
-        if(!swapItem.classList.contains('draggable')) {
-            swapItem = swapItem.parentElement;
-        }
 
-    
-        if (list === swapItem.parentElement) {
-          swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
-          list.insertBefore(selectedItem, swapItem);
-        }
+    if (list === swapItem.parentElement) {
+      swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
+      list.insertBefore(selectedItem, swapItem);
+    }
+
+    if (swapItem && swapItem.classList.contains('drag-between-enable')) {
+      selectedItem.parentElement.removeChild(selectedItem);
+      swapItem.appendChild(selectedItem);
     }
     
   }
   
   function handleDrop(item) {
     let selectedItem = item.target;
-    if(!selectedItem.classList.contains('draggable')) {
-        selectedItem = selectedItem.parentElement;
-    }
     selectedItem.classList.remove('drag-sort-active');
   }

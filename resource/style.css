@@ -63,6 +63,9 @@ body {
 }
 
 .character-window {
+    min-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -73,11 +76,12 @@ body {
 .character-icon {
     border-radius: 5px;
     margin: 1px;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
+    position: relative;
 }
 
 .character-icon:hover {
-    box-shadow: 0 0 30px white;
+    box-shadow: 0px 0px 30px 0px white inset;
 }
 
 .character-icon > img.char-icon {
@@ -85,6 +89,7 @@ body {
     border: 2px solid white;
     width: 100px;
     height: auto;
+    pointer-events: none;
 }
 
 .character-icon > img.element-icon {
@@ -97,6 +102,7 @@ body {
     left: -101px;
     bottom: 3px;
     z-index: 1;
+    pointer-events: none;
 }
 
 .character-icon > img.role-icon {
@@ -109,6 +115,7 @@ body {
     left: -27px;
     bottom: 3px;
     z-index: 1;
+    pointer-events: none;
 }
 
 .character-icon.five-star {
@@ -151,6 +158,7 @@ body {
 
 .top-button {
     position: absolute;
+    z-index: 5;
     top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -164,6 +172,7 @@ body {
 
 .top-button-2 {
     position: absolute;
+    z-index: 5;
     top: 11%;
     left: 50%;
     transform: translate(-50%, -50%);

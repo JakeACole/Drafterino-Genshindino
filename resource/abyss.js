@@ -59,16 +59,14 @@ function ban_character(character_element) {
     let char_name = character_element.querySelector('img.char-icon').alt;
     // toggle banned class on self, then set banned class on character in main list
     let char_elem = document.getElementById("character-" + char_name);
-    if (character_element.classList.contains("char-banned"))
-    {
-        character_element.classList.remove("char-banned");
-        char_elem.classList.remove("char-banned");
-    }
-    else
-    {
-        character_element.classList.add("char-banned");
-        char_elem.classList.add("char-banned");
-    }
+    
+    let team_characters = document.querySelectorAll('.abyss-side-frame>.character-window>.character-icon>img.char-icon');
+    char_elem.classList.toggle('char-banned');
+    team_characters.forEach(team_character => {
+        if (team_character.alt == char_name) {
+            team_character.parentElement.classList.toggle('char-banned');
+        }
+    });
 }
 
 function set_captain(character_element) {
@@ -96,13 +94,17 @@ function add_to_team(character_element) {
     let char_name = character_element.querySelector('img.char-icon').alt;
     if (!active_section || character_element.classList.contains("char-banned")) return;
 
+    let player_number = active_section.id.charAt(active_section.id.length - 4);
+
     let abyss_team = abyss_teams[active_section.parentElement.id];
-    if (abyss_team.length < 4 && !abyss_team.includes(char_name))
+    if (abyss_team.length < 4 && !abyss_team.includes(char_name) && !character_element.classList.contains('abyss-drafted'))
     {
         let new_char_node = character_element.cloneNode(true);
+        new_char_node.id = active_section.id + '-' + character_element.id;
         active_section.appendChild(new_char_node);
         abyss_team.push(char_name);
         // add listener for clicking to ban
+        enableDragItem(new_char_node);
         new_char_node.addEventListener('click', event => {
             let elem = event.target;
             if (elem.nodeName == 'IMG') {
@@ -110,6 +112,7 @@ function add_to_team(character_element) {
             }
             ban_character(elem);
         });
+        character_element.classList.add('abyss-team' + player_number);
     }
     else if (abyss_team.includes(char_name))
     {
@@ -122,6 +125,7 @@ function add_to_team(character_element) {
                 abyss_team.splice(abyss_team.indexOf(char_name), 1);
             }
         });
+        character_element.classList.remove('abyss-team' + player_number);
     }
 }
 
@@ -149,7 +153,10 @@ function populate_portraits() {
                 if (elem.nodeName == 'IMG') {
                     elem = elem.parentElement;
                 }
-                add_to_team(elem);
+                if (active_section.id.slice(-1) == elem.parentElement.id.slice(-1)) {
+                    add_to_team(elem);
+                }
+                
             });
 
             if (p1_chars.includes(character.name)) {
@@ -180,6 +187,58 @@ function set_active_section(button_node) {
     });
     button_node.classList.add('active');
     active_section = button_node.parentElement.querySelector('.character-window');
+
+    // get team members for the current floor
+    let teams = active_section.parentElement.parentElement.querySelectorAll('.abyss-side-frame > .character-window');
+    let team_setup = {
+        'team1': [],
+        'team2': []
+    };
+    teams.forEach(team => {
+        Array.from(team.children).forEach(character => {
+            if(team.id.includes('team1')) {
+                team_setup['team1'].push(character.id.replace(team.id + '-', ''));
+            }
+            else if (team.id.includes('team2')) {
+                team_setup['team2'].push(character.id.replace(team.id + '-', ''));
+            }
+        })
+    });
+    
+    // highlight team members for the current floor in the pool
+    let character_pool_p1 = document.getElementById('character-pool-p1');
+    Array.from(character_pool_p1.children).forEach(character => {
+        character.classList.remove('abyss-team1');
+        character.classList.remove('abyss-team2');
+        character.classList.remove('abyss-drafted');
+        
+        if(team_setup['team1'].includes(character.id)) {
+            character.classList.add('abyss-team1');
+            character.classList.add('abyss-drafted');
+        }
+        else if (team_setup['team2'].includes(character.id)) {
+            character.classList.add('abyss-team2');
+            character.classList.add('abyss-drafted');
+        }
+    });
+
+    let character_pool_p2 = document.getElementById('character-pool-p2');
+    Array.from(character_pool_p2.children).forEach(character => {
+        character.classList.remove('abyss-team1');
+        character.classList.remove('abyss-team2');
+        character.classList.remove('abyss-drafted');
+        
+        if(team_setup['team1'].includes(character.id)) {
+            character.classList.add('abyss-team1');
+            character.classList.add('abyss-drafted');
+        }
+        else if (team_setup['team2'].includes(character.id)) {
+            character.classList.add('abyss-team2');
+            character.classList.add('abyss-drafted');
+        }
+    });
+
+    
 }
 
 function toggle_floor_visibility(label_elem) {
