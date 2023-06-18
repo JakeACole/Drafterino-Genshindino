@@ -67,7 +67,6 @@ function update_cookie_state() {
         });
         document.cookie = key + '=' + JSON.stringify(saved_chars[key]);
     });
-    console.log('cookie update');
 }
 
 function move_character(elem) {
