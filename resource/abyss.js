@@ -113,6 +113,7 @@ function add_to_team(character_element) {
             ban_character(elem);
         });
         character_element.classList.add('abyss-team' + player_number);
+        character_element.classList.add('abyss-drafted');
     }
     else if (abyss_team.includes(char_name))
     {
@@ -126,6 +127,7 @@ function add_to_team(character_element) {
             }
         });
         character_element.classList.remove('abyss-team' + player_number);
+        character_element.classList.remove('abyss-drafted');
     }
 }
 

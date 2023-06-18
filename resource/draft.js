@@ -58,23 +58,22 @@ function generate_character_div(character) {
     return new_char_div;
 }
 
+function update_cookie_state() {
+    ['p1', 'p2', 'unavail'].forEach(key => {
+        saved_chars[key] = [];
+        let pool = document.getElementById('character-pool-' + key);
+        pool.querySelectorAll('.character-icon > img.char-icon').forEach(img => {
+            saved_chars[key].push(img.alt);
+        });
+        document.cookie = key + '=' + JSON.stringify(saved_chars[key]);
+    });
+    console.log('cookie update');
+}
+
 function move_character(elem) {
     if (active_section && elem.parentElement != active_section)
     {
-        let prev_section = elem.parentElement.id.replace('character-pool-','');
-        let new_section = active_section.id.replace('character-pool-','');
-        let char_name = elem.querySelector("img.char-icon").alt;
-        if (prev_section != 'available') {
-            let prev_index = saved_chars[prev_section].indexOf(char_name);
-            if (prev_index != -1) {
-                saved_chars[prev_section].splice(prev_index, 1);
-                document.cookie = prev_section + '=' + JSON.stringify(saved_chars[prev_section]);
-            }
-        }
-        if (new_section != 'available') {
-            saved_chars[new_section].push(char_name);
-            document.cookie = new_section + '=' + JSON.stringify(saved_chars[new_section]);
-        }
+        update_cookie_state();
         elem.parentElement.removeChild(elem);
         active_section.appendChild(elem);
     }
@@ -135,10 +134,10 @@ function populate_portraits() {
         }
         new_char_div.addEventListener('click', (event) => {
             let elem = event.target;
-            if (elem.nodeName == 'IMG') {
-                elem = elem.parentElement;
-            }
             move_character(elem);
+        });
+        new_char_div.addEventListener('dragend', (event) => {
+            update_cookie_state();
         });
     });
 }

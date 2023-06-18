@@ -31,10 +31,11 @@ function enableDragSort(listClass) {
     }
 
     if (swapItem && swapItem.classList.contains('drag-between-enable')) {
-      selectedItem.parentElement.removeChild(selectedItem);
-      swapItem.appendChild(selectedItem);
+      if (swapItem !== selectedItem.parentElement) {
+        selectedItem.parentElement.removeChild(selectedItem);
+        swapItem.appendChild(selectedItem);
+      }
     }
-    
   }
   
   function handleDrop(item) {
