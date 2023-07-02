@@ -28,10 +28,6 @@
     margin-right: auto;
 }
 
-.abyss-side-frame > button {
-    margin-right: auto;
-}
-
 .abyss-side-frame.minimized {
     display: none;
 }
