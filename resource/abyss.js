@@ -187,25 +187,36 @@ function set_active_section(button_node) {
     active_buttons.forEach(button => {
         button.classList.remove('active');
     });
-    button_node.classList.add('active');
-    active_section = button_node.parentElement.querySelector('.character-window');
+    let event_section = button_node.parentElement.querySelector('.character-window');
+    let new_section = (event_section != active_section);
+    
+    if (new_section) {
+        button_node.classList.add('active');
+        active_section = button_node.parentElement.querySelector('.character-window');
+    }
+    else {
+        active_section = null;
+    }
 
     // get team members for the current floor
-    let teams = active_section.parentElement.parentElement.querySelectorAll('.abyss-side-frame > .character-window');
     let team_setup = {
         'team1': [],
         'team2': []
     };
-    teams.forEach(team => {
-        Array.from(team.children).forEach(character => {
-            if(team.id.includes('team1')) {
-                team_setup['team1'].push(character.id.replace(team.id + '-', ''));
-            }
-            else if (team.id.includes('team2')) {
-                team_setup['team2'].push(character.id.replace(team.id + '-', ''));
-            }
-        })
-    });
+    if (new_section) {
+        let teams = active_section.parentElement.parentElement.querySelectorAll('.abyss-side-frame > .character-window');
+        teams.forEach(team => {
+            Array.from(team.children).forEach(character => {
+                if(team.id.includes('team1')) {
+                    team_setup['team1'].push(character.id.replace(team.id + '-', ''));
+                }
+                else if (team.id.includes('team2')) {
+                    team_setup['team2'].push(character.id.replace(team.id + '-', ''));
+                }
+            })
+        });
+    }
+    
     
     // highlight team members for the current floor in the pool
     let character_pool_p1 = document.getElementById('character-pool-p1');

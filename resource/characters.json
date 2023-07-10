@@ -230,7 +230,7 @@
     "region": "monstadt",
     "role": "quick-swap",
     "icon": "Kaeya_Icon.webp",
-    "alt_icons": [],
+    "alt_icons": ["Sailwind_Shadow_Icon.webp"],
     "element": "cryo"
   },
   {
@@ -284,7 +284,7 @@
     "region": "monstadt",
     "role": "primary-damage",
     "icon": "Klee_Icon.webp",
-    "alt_icons": [],
+    "alt_icons": ["Blossoming_Starlight_Icon.webp"],
     "element": "pyro"
   },
   {

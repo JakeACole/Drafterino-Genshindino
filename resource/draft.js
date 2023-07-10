@@ -146,8 +146,14 @@ function set_active_section(button_node) {
     active_buttons.forEach(button => {
         button.classList.remove('active');
     });
-    button_node.classList.add('active');
-    active_section = button_node.parentElement.querySelector('.character-window');
+    event_section = button_node.parentElement.querySelector('.character-window');
+    if (event_section != active_section) {
+        button_node.classList.add('active');
+        active_section = button_node.parentElement.querySelector('.character-window');
+    }
+    else {
+        active_section = null;
+    }
 }
 
 function goto_abyss() {
