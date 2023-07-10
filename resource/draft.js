@@ -113,6 +113,7 @@ function populate_portraits() {
     }
     
     ['p1', 'p2', 'unavail'].forEach(key => {
+        saved_chars[key] = [...new Set(saved_chars[key])]; // remove duplicates
         document.cookie = key + '=' + JSON.stringify(saved_chars[key]);
     });
 
