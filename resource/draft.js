@@ -72,9 +72,9 @@ function update_cookie_state() {
 function move_character(elem) {
     if (active_section && elem.parentElement != active_section)
     {
-        update_cookie_state();
         elem.parentElement.removeChild(elem);
         active_section.appendChild(elem);
+        update_cookie_state();
     }
 }
 
