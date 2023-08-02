@@ -29,6 +29,13 @@ function enableDragSort(listClass) {
       swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
       list.insertBefore(selectedItem, swapItem);
     }
+    else if(swapItem.parentElement && swapItem.parentElement.classList.contains('drag-between-enable') &&
+      swapItem.parentElement.classList.contains('drag-sort-enable')) {
+        selectedItem.parentElement.removeChild(selectedItem);
+        swapItem.parentElement.appendChild(selectedItem);
+        swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
+        swapItem.parentElement.insertBefore(selectedItem, swapItem);
+    }
 
     if (swapItem && swapItem.classList.contains('drag-between-enable')) {
       if (swapItem !== selectedItem.parentElement) {

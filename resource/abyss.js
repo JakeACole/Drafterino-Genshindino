@@ -74,10 +74,14 @@ function set_captain(character_element) {
     crown.parentElement.removeChild(crown);
     character_element.appendChild(crown);
 
+    let player_string = character_element.parentElement.id.slice(-2);
+
     // adjust crown in team lineups
     let team_crowns = document.querySelectorAll('.abyss-side-frame>.character-window>.character-icon>img.crown-icon');
     team_crowns.forEach(team_crown => {
-        team_crown.parentElement.removeChild(team_crown);
+        if (team_crown.parentElement.parentElement.id.endsWith(player_string)) {
+            team_crown.parentElement.removeChild(team_crown);
+        }
     });
 
     // add crown to proper character
