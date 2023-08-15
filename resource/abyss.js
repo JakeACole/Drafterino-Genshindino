@@ -1,6 +1,9 @@
 var character_data = [];
+var character_attributes = {};
+var restricted_attributes = {};
 
 var active_section = null;
+var active_restrictions = null;
 var char_map = {};
 var p1_chars = [];
 var p2_chars = [];
@@ -96,7 +99,9 @@ function set_captain(character_element) {
 
 function add_to_team(character_element) {
     let char_name = character_element.querySelector('img.char-icon').alt;
-    if (!active_section || character_element.classList.contains("char-banned")) return;
+    if (!active_section || 
+        character_element.classList.contains("char-banned") /*||
+        character_element.classList.contains("char-restricted")*/) return;
 
     let player_number = active_section.id.charAt(active_section.id.length - 4);
 
@@ -104,6 +109,7 @@ function add_to_team(character_element) {
     if (abyss_team.length < 4 && !abyss_team.includes(char_name) && !character_element.classList.contains('abyss-drafted'))
     {
         let new_char_node = character_element.cloneNode(true);
+        new_char_node.classList.remove('char-restricted');
         new_char_node.id = active_section.id + '-' + character_element.id;
         active_section.appendChild(new_char_node);
         abyss_team.push(char_name);
@@ -133,6 +139,107 @@ function add_to_team(character_element) {
         character_element.classList.remove('abyss-team' + player_number);
         character_element.classList.remove('abyss-drafted');
     }
+}
+
+function set_restricted_attribute(attribute_img) {
+    // console.log("Restricted: " + attribute_img.alt);
+    attribute_img.classList.toggle('attribute-restricted');
+    let attribute_floor_list = attribute_img.parentElement.parentElement.parentElement.querySelector('.attribute-floor-list');
+
+    if (attribute_img.classList.contains('attribute-restricted')) {
+        let new_attr_img = attribute_img.cloneNode();
+        new_attr_img.classList.remove('attribute-restricted');
+        attribute_floor_list.appendChild(new_attr_img);
+    }
+    else {
+        let floor_attrs = Array.from(attribute_floor_list.children);
+        floor_attrs.forEach(attr => {
+            if (attr.alt == attribute_img.alt) {
+                attr.parentElement.removeChild(attr);
+            }
+        })
+    }
+
+    if (active_section) {
+        let changed_section = attribute_img.parentElement.parentElement.parentElement.parentElement;
+        let active_section_parent = active_section.parentElement.parentElement;    
+        if (changed_section == active_section_parent) {
+            show_restricted_characters();
+        }
+    }
+    
+}
+
+function show_restricted_characters() {
+    let p1_pool = document.getElementById('character-pool-p1');
+    let p2_pool = document.getElementById('character-pool-p2');
+
+    let chars = {};
+    chars['1'] = Array.from(p1_pool.children);
+    chars['1'].forEach(char => {
+        char.classList.remove('char-restricted');
+    });
+    chars['2'] = Array.from(p2_pool.children);
+    chars['2'].forEach(char => {
+        char.classList.remove('char-restricted');
+    });
+
+    if(active_section) {
+        let player_number = active_section.id.slice(-1);
+        let attribute_container = active_section.parentElement.parentElement.querySelector('.attribute-box');
+        let attributes = attribute_container.querySelectorAll('.attribute-icon');
+        let restricted_attrs = [];
+        attributes.forEach(attr => {
+            if (attr.classList.contains('attribute-restricted')) {
+                restricted_attrs.push(attr.alt);
+            }
+        })
+
+        chars[player_number].forEach(char => {
+            let char_object = char_map[char.id.slice(10)];
+            if (char_object['role'] != 'healer') {
+                ['weapon', 'region', 'element'].forEach(attr_name => {
+                    if (restricted_attrs.includes(attr_name + '-' + char_object[attr_name])) {
+                        char.classList.add('char-restricted');
+                    }
+                });
+            }
+        })
+    }
+}
+
+function populate_attributes() {
+    // populate the attribute pop-up for each floor
+    let attribute_container_div = document.createElement("div");
+    attribute_container_div.classList.add("attribute-box");
+
+    for (const [attr_name, attr_list] of Object.entries(character_attributes)) {
+        let attr_row = document.createElement("div");
+        for (const attr of attr_list) {
+            let attr_img = document.createElement('img');
+            attr_img.src = 'resource/' + attr['file'];
+            attr_img.alt = attr_name + '-' + attr['name'];
+            attr_img.classList.add('attribute-icon');
+            attr_row.appendChild(attr_img);
+        }
+        attribute_container_div.appendChild(attr_row);
+    }
+
+    let floor_labels = document.querySelectorAll('.abyss-floor-label-container');
+    floor_labels.forEach(label_container => {
+        let attribute_container_copy = attribute_container_div.cloneNode(true);
+        label_container.appendChild(attribute_container_copy);
+        attribute_container_copy.addEventListener('click', event => {
+            let elem = event.target;
+            if (elem.nodeName == 'IMG') {
+                set_restricted_attribute(elem);
+            }
+        });
+
+        let attribute_list_div = document.createElement('div');
+        attribute_list_div.classList.add('attribute-floor-list');
+        label_container.appendChild(attribute_list_div);
+    });
 }
 
 function populate_portraits() {
@@ -201,6 +308,8 @@ function set_active_section(button_node) {
     else {
         active_section = null;
     }
+    // update restricted characters
+    show_restricted_characters();
 
     // get team members for the current floor
     let team_setup = {
@@ -259,6 +368,12 @@ function set_active_section(button_node) {
 }
 
 function toggle_floor_visibility(label_elem) {
+    while(!label_elem.classList.contains("abyss-floor-label-container")) {
+        if (label_elem.classList.contains("attribute-box")) {
+            return;
+        }
+        label_elem = label_elem.parentElement;
+    }
     let team_nodes = label_elem.parentElement.querySelectorAll(".abyss-side-frame");
     team_nodes.forEach(team_node => {
         team_node.classList.toggle("minimized");
@@ -301,6 +416,11 @@ window.onload = (event) => {
         p2_observer.observe(document.getElementById('character-pool-p2'), {childList: true});
     });
 
+    fetch("resource/attributes.json").then(res => res.json()).then(data => {
+        character_attributes = data;
+        populate_attributes();
+    });
+
     // set listeners for the buttons
     let buttons = document.querySelectorAll("button.abyss-button:not(.disabled-button)");
     buttons.forEach(button => {
@@ -309,7 +429,7 @@ window.onload = (event) => {
         });
     });
 
-    let labels = document.querySelectorAll(".abyss-floor-label");
+    let labels = document.querySelectorAll(".abyss-floor-label-container");
     labels.forEach(label => {
         label.addEventListener('click', (event) => {
             toggle_floor_visibility(event.target);

@@ -1,0 +1,76 @@
+{
+    "element": [
+        {
+            "name": "pyro",
+            "file": "Element_Pyro.svg"
+        },
+        {
+            "name": "hydro",
+            "file": "Element_Hydro.svg"
+        },
+        {
+            "name": "anemo",
+            "file": "Element_Anemo.svg"
+        },
+        {
+            "name": "electro",
+            "file": "Element_Electro.svg"
+        },
+        {
+            "name": "dendro",
+            "file": "Element_Dendro.svg"
+        },
+        {
+            "name": "cryo",
+            "file": "Element_Cryo.svg"
+        },
+        {
+            "name": "geo",
+            "file": "Element_Geo.svg"
+        }
+    ],
+    "region": [
+        {
+            "name": "monstadt",
+            "file": "Emblem_Mondstadt.webp"
+        },
+        {
+            "name": "liyue",
+            "file": "Emblem_Liyue.webp"
+        },
+        {
+            "name": "inazuma",
+            "file": "Emblem_Inazuma.webp"
+        },
+        {
+            "name": "sumeru",
+            "file": "Emblem_Sumeru.webp"
+        },
+        {
+            "name": "fontaine",
+            "file": "Emblem_Fontaine.webp"
+        }
+    ],
+    "weapon": [
+        {
+            "name": "sword",
+            "file": "Icon_Sword.webp"
+        },
+        {
+            "name": "claymore",
+            "file": "Icon_Claymore.webp"
+        },
+        {
+            "name": "polearm",
+            "file": "Icon_Polearm.webp"
+        },
+        {
+            "name": "catalyst",
+            "file": "Icon_Catalyst.webp"
+        },
+        {
+            "name": "bow",
+            "file": "Icon_Bow.webp"
+        }        
+    ]
+}
