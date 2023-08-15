@@ -34,6 +34,7 @@
 
 .abyss-floor-label-container {
     position: relative;
+    z-index: 1;
     
     color: white;
     width: 50%;
@@ -112,6 +113,7 @@
 
 .abyss-floor-label-container:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
 }
 
 .abyss-button {
