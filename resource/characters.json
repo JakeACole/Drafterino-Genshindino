@@ -2,7 +2,7 @@
     {
         "name": "albedo",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Albedo_Icon.webp",
         "alt_icons": [],
@@ -32,7 +32,7 @@
     {
         "name": "amber",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Amber_Icon.webp",
         "alt_icons": [
@@ -64,7 +64,7 @@
     {
         "name": "barbara",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "healer",
         "icon": "Barbara_Icon.webp",
         "alt_icons": [
@@ -86,7 +86,7 @@
     {
         "name": "bennett",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "healer",
         "icon": "Bennett_Icon.webp",
         "alt_icons": [],
@@ -146,7 +146,7 @@
     {
         "name": "diluc",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "primary-damage",
         "icon": "Diluc_Icon.webp",
         "alt_icons": [
@@ -158,7 +158,7 @@
     {
         "name": "diona",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "healer",
         "icon": "Diona_Icon.webp",
         "alt_icons": [],
@@ -178,7 +178,7 @@
     {
         "name": "eula",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "primary-damage",
         "icon": "Eula_Icon.webp",
         "alt_icons": [],
@@ -198,7 +198,7 @@
     {
         "name": "fischl",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Fischl_Icon.webp",
         "alt_icons": [
@@ -240,7 +240,7 @@
     {
         "name": "jean",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "healer",
         "icon": "Jean_Icon.webp",
         "alt_icons": [
@@ -263,7 +263,7 @@
     {
         "name": "kaeya",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Kaeya_Icon.webp",
         "alt_icons": [
@@ -329,7 +329,7 @@
     {
         "name": "klee",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "primary-damage",
         "icon": "Klee_Icon.webp",
         "alt_icons": [
@@ -371,7 +371,7 @@
     {
         "name": "lisa",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Lisa_Icon.webp",
         "alt_icons": [
@@ -381,9 +381,29 @@
         "weapon": "catalyst"
     },
     {
+        "name": "lynette",
+        "star_rarity": 4,
+        "region": "fontaine",
+        "role": "quick-swap",
+        "icon": "Lynette_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "sword"
+    },
+    {
+        "name": "lyney",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "primary-damage",
+        "icon": "Lyney_Icon.webp",
+        "alt_icons": [],
+        "element": "pyro",
+        "weapon": "bow"
+    },
+    {
         "name": "mika",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Mika_Icon.webp",
         "alt_icons": [],
@@ -393,7 +413,7 @@
     {
         "name": "mona",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Mona_Icon.webp",
         "alt_icons": [
@@ -437,7 +457,7 @@
     {
         "name": "noelle",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "shielder",
         "icon": "Noelle_Icon.webp",
         "alt_icons": [],
@@ -467,7 +487,7 @@
     {
         "name": "razor",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "primary-damage",
         "icon": "Razor_Icon.webp",
         "alt_icons": [],
@@ -477,7 +497,7 @@
     {
         "name": "rosaria",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Rosaria_Icon.webp",
         "alt_icons": [
@@ -529,7 +549,7 @@
     {
         "name": "sucrose",
         "star_rarity": 4,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Sucrose_Icon.webp",
         "alt_icons": [],
@@ -567,7 +587,20 @@
         "weapon": "bow"
     },
     {
-        "name": "traveler",
+        "name": "aether",
+        "star_rarity": 5,
+        "region": "none",
+        "role": "quick-swap",
+        "icon": "Traveler_Icon.webp",
+        "alt_icons": [
+            "Aether_Icon.webp",
+            "Lumine_Icon.webp"
+        ],
+        "element": "none",
+        "weapon": "sword"
+    },
+    {
+        "name": "lumine",
         "star_rarity": 5,
         "region": "none",
         "role": "quick-swap",
@@ -582,7 +615,7 @@
     {
         "name": "venti",
         "star_rarity": 5,
-        "region": "monstadt",
+        "region": "mondstadt",
         "role": "quick-swap",
         "icon": "Venti_Icon.webp",
         "alt_icons": [],
