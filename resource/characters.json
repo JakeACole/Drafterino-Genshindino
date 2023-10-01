@@ -208,6 +208,16 @@
         "weapon": "bow"
     },
     {
+        "name": "freminet",
+        "star_rarity": 4,
+        "region": "fontaine",
+        "role": "quick-swap",
+        "icon": "Freminet_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "claymore"
+    },
+    {
         "name": "ganyu",
         "star_rarity": 5,
         "region": "liyue",
