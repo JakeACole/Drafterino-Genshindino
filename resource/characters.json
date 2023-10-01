@@ -423,6 +423,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "neuvillette",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "primary-damage",
+        "icon": "Neuvillette_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "catalyst"
+    },
+    {
         "name": "nahida",
         "star_rarity": 5,
         "region": "sumeru",
