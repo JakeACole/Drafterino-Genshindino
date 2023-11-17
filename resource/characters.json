@@ -104,6 +104,16 @@
         "weapon": "polearm"
     },
     {
+        "name": "charlotte",
+        "star_rarity": 4,
+        "region": "fontaine",
+        "role": "healer",
+        "icon": "Charlotte_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "catalyst"
+    },
+    {
         "name": "chongyun",
         "star_rarity": 4,
         "region": "liyue",
@@ -211,11 +221,21 @@
         "name": "freminet",
         "star_rarity": 4,
         "region": "fontaine",
-        "role": "quick-swap",
+        "role": "primary-damage",
         "icon": "Freminet_Icon.webp",
         "alt_icons": [],
         "element": "cryo",
         "weapon": "claymore"
+    },
+    {
+        "name": "furina",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "quick-swap",
+        "icon": "Furina_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "sword"
     },
     {
         "name": "ganyu",
@@ -650,6 +670,16 @@
         "icon": "Wanderer_Icon.webp",
         "alt_icons": [],
         "element": "anemo",
+        "weapon": "catalyst"
+    },
+    {
+        "name": "wriothesley",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "primary-damage",
+        "icon": "Wriothesley_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
         "weapon": "catalyst"
     },
     {
