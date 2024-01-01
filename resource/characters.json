@@ -463,6 +463,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "navia",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "primary-damage",
+        "icon": "Navia_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "claymore"
+    },
+    {
         "name": "neuvillette",
         "star_rarity": 5,
         "region": "fontaine",
