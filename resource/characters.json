@@ -114,6 +114,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "chevreuse",
+        "star_rarity": 4,
+        "region": "fontaine",
+        "role": "quick-swap",
+        "icon": "Chevreuse_Icon.webp",
+        "alt_icons": [],
+        "element": "pyro",
+        "weapon": "polearm"
+    },
+    {
         "name": "chongyun",
         "star_rarity": 4,
         "region": "liyue",
@@ -243,9 +253,21 @@
         "region": "liyue",
         "role": "primary-damage",
         "icon": "Ganyu_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Twilight_Blossom_Icon.webp"
+        ],
         "element": "cryo",
         "weapon": "bow"
+    },
+    {
+        "name": "gaming",
+        "star_rarity": 4,
+        "region": "liyue",
+        "role": "primary-damage",
+        "icon": "Gaming_Icon.webp",
+        "alt_icons": [],
+        "element": "pyro",
+        "weapon": "claymore"
     },
     {
         "name": "gorou",
@@ -582,7 +604,9 @@
         "region": "liyue",
         "role": "quick-swap",
         "icon": "Shenhe_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Frostflower_Dew_Icon.webp"
+        ],
         "element": "cryo",
         "weapon": "polearm"
     },
@@ -701,6 +725,16 @@
         "alt_icons": [],
         "element": "pyro",
         "weapon": "polearm"
+    },
+    {
+        "name": "xianyun",
+        "star_rarity": 5,
+        "region": "liyue",
+        "role": "healer",
+        "icon": "Xianyun_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "catalyst"
     },
     {
         "name": "xiao",
