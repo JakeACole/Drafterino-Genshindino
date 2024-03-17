@@ -124,6 +124,16 @@
         "weapon": "polearm"
     },
     {
+        "name": "chiori",
+        "star_rarity": 5,
+        "region": "liyue",
+        "role": "quick-swap",
+        "icon": "Chiori_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "sword"
+    },
+    {
         "name": "chongyun",
         "star_rarity": 4,
         "region": "liyue",
@@ -752,7 +762,9 @@
         "region": "liyue",
         "role": "quick-swap",
         "icon": "Xingqiu_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Bamboo_Rain_Icon.webp"
+        ],
         "element": "hydro",
         "weapon": "sword"
     },
