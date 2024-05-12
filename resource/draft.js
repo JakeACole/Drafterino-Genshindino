@@ -1,5 +1,6 @@
 var character_data = [];
 var character_map = {};
+var attribute_map = {};
 var last_sort = '';
 var sort_direction = 1;
 var active_section = null;
@@ -25,10 +26,14 @@ function update_cookie_state() {
 function move_character(elem) {
     if (active_section && elem.parentElement != active_section)
     {
-        elem.parentElement.removeChild(elem);
-        active_section.appendChild(elem);
-        update_cookie_state();
+        move_character_to_section(elem, active_section);
     }
+}
+
+function move_character_to_section(elem, section) {
+    elem.parentElement.removeChild(elem);
+    section.appendChild(elem);
+    update_cookie_state();
 }
 
 function populate_portraits() {
@@ -172,6 +177,80 @@ function reset_teams() {
     active_section = prev_active_section;
 }
 
+function populate_ban_form(attributes) {
+    let attr_dropdown = document.getElementById("ban-attribute");
+    for (attr in attributes) {
+        var opt = document.createElement("option");
+        opt.value = attr;
+        opt.innerHTML = attr;
+        attr_dropdown.appendChild(opt);
+    }
+    update_ban_form();
+}
+
+function update_ban_form(refresh=false) {
+    let ban_prompt = document.getElementById("character-ban-prompt");
+    let attr = document.getElementById("ban-attribute").value;
+    if (attr == "none") {
+        ban_prompt.classList.add("hidden");
+    }
+    else if (ban_prompt.classList.contains("hidden") || refresh == true) {
+        let ban_value_select = document.getElementById("ban-value");
+        // remove options in ban-value select
+        let i, L = ban_value_select.options.length - 1;
+        for(i = L; i > 0; i--) {
+            ban_value_select.remove(i);
+        }
+        // add options in ban-value select
+        attribute_map[attr].forEach(val => {
+            var opt = document.createElement("option");
+            opt.value = val;
+            opt.innerHTML = val;
+            ban_value_select.appendChild(opt);
+        });
+
+        ban_prompt.classList.remove("hidden");
+    }
+    // update text values
+    document.getElementById("ban-quantity-text").innerHTML = document.getElementById("ban-quantity").value;
+    document.getElementById("ban-attribute-text").innerHTML = attr;
+}
+
+function ban_random_chars(attr, value, count) {
+    // get list of chars with matching attr value
+    let chars = []
+    let avail_section = document.getElementById("character-pool-available");
+    character_data.forEach(char => {
+        character_elem = document.getElementById("character-" + char.name);
+        if (char[attr] == value && character_elem.parentElement == avail_section) {
+            chars.push(char.name);
+        }
+    });
+    console.log(chars);
+    ban_section = document.getElementById("character-pool-banned");
+    for (let i = 0; i < count && chars.length > 0; i++) {
+        char_index = Math.floor(Math.random() * chars.length);
+        let char_name = chars[char_index];
+        let char_div = document.getElementById("character-" + char_name);
+        move_character_to_section(char_div, ban_section);
+        chars.splice(char_index, 1);
+    }
+}
+
+function perform_ban() {
+    let ban_attr = document.getElementById("ban-attribute").value;
+    let ban_count = parseInt(document.getElementById("ban-quantity").value);
+    let ban_value = document.getElementById("ban-value").value;
+    if (ban_value == "each") {
+        attribute_map[ban_attr].forEach(val => {
+            ban_random_chars(ban_attr, val, ban_count);
+        })
+    }
+    else {
+        ban_random_chars(ban_attr, ban_value, ban_count);
+    }
+}
+
 window.addEventListener('load', (event) => {
 
     fetch("resource/characters.json").then(res => res.json()).then(data => {
@@ -179,6 +258,19 @@ window.addEventListener('load', (event) => {
         populate_portraits();
         enableDragSort('drag-sort-enable');
     });
+
+    fetch("resource/attributes_plain.json").then(res => res.json()).then(data => {
+        attribute_map = data;
+        populate_ban_form(attribute_map);
+        let num_input = document.getElementById("ban-quantity");
+        num_input.addEventListener('change', update_ban_form);
+        let attribute_input = document.getElementById("ban-attribute");
+        attribute_input.addEventListener('change', (event) => {
+            update_ban_form(refresh=true);
+        });
+        let ban_button = document.getElementById("button-ban");
+        ban_button.addEventListener('click', perform_ban);
+    })
 
     // set listeners for the buttons
     let buttons = document.querySelectorAll("button.draft-button:not(.disabled-button)");

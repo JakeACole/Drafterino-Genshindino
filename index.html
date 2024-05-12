@@ -17,20 +17,48 @@
                 <div id="character-pool-p2" class="character-window drag-sort-enable drag-between-enable"></div>
             </div>
         </div>
-        <div class="character-pool-frame">
-            <button id="button-avail" class="draft-button">Available Characters</button>
-            <div id="sort-options" class="sort-options">
-                <span id="sort-text" class="sort-label">Sort by: </span>
-                <button id="sort-by-name" class="sort-button">Name</button>
-                <button id="sort-by-element" class="sort-button">Element</button>
-                <button id="sort-by-weapon" class="sort-button">Weapon</button>
-                <button id="sort-by-role" class="sort-button">Role</button>
-                <button id="sort-by-region" class="sort-button">Region</button>
-                <button id="sort-by-star_rarity" class="sort-button">Rarity</button>
-                
+        <div class="character-available-frame">
+            <div class="empty-div"></div>
+            <div class="character-pool-frame">
+                <button id="button-avail" class="draft-button">Available Characters</button>
+                <div id="sort-options" class="sort-options">
+                    <span id="sort-text" class="sort-label">Sort by: </span>
+                    <button id="sort-by-name" class="sort-button">Name</button>
+                    <button id="sort-by-element" class="sort-button">Element</button>
+                    <button id="sort-by-weapon" class="sort-button">Weapon</button>
+                    <button id="sort-by-role" class="sort-button">Role</button>
+                    <button id="sort-by-region" class="sort-button">Region</button>
+                    <button id="sort-by-star_rarity" class="sort-button">Rarity</button>
+                    
+                </div>
+                <div id="character-pool-available" class="character-window drag-sort-enable drag-between-enable">
+                    <!-- all character portraits get populated here -->
+                </div>
             </div>
-            <div id="character-pool-available" class="character-window drag-sort-enable drag-between-enable">
-                <!-- all character portraits get populated here -->
+            <div id="character-ban-form" class="character-ban-form">
+                <div id="character-ban-form-inputs" class="character-ban-form-inputs">
+                    <label for="ban-quantity"># of characters to ban:</label>
+                    <input type="number" min="0" id="ban-quantity" name="ban-quantity" value="0">
+                    <label for="ban-attribute">Selected attribute:</label>
+                    <select id="ban-attribute" name="ban-attribute">
+                        <!-- gets populated from JS -->
+                        <option selected="selected" value="none">none</option>
+                    </select>
+                </div>
+                <div id="character-ban-prompt" class="character-ban-prompt hidden">
+                    Ban <div id="ban-quantity-text">10</div> characters of 
+                    <select id="ban-value" name="ban-value">
+                        <option selected="selected" value="each">each</option>
+                    </select> <div id="ban-attribute-text">region</div>:
+                </div>
+                <button id="button-ban" class="ban-button">Ban!</button>
+            </div>
+        </div>
+        
+        <div class="character-pool-frame">
+            <button id="button-banned" class="draft-button">Banned Characters</button>
+            <div id="character-pool-banned" class="character-window drag-sort-enable drag-between-enable">
+
             </div>
         </div>
         <div class="character-pool-frame">

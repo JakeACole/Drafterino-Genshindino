@@ -27,6 +27,7 @@ function generate_character_div(character) {
     new_char_img.classList.add('char-icon');
     new_char_div.appendChild(new_char_img);
     new_char_div.title = character.name;
+    new_char_div.id = "character-" + character.name;
     
 
     if (character.element != "none") {

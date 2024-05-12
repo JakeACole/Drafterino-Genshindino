@@ -1,0 +1,37 @@
+{
+    "element": [
+        "pyro",
+        "hydro",
+        "anemo",
+        "electro",
+        "dendro",
+        "cryo",
+        "geo"
+    ],
+    "region": [
+        "mondstadt",
+        "liyue",
+        "inazuma",
+        "sumeru",
+        "fontaine",
+        "natlan",
+        "snezhnaya"
+    ],
+    "star_rarity": [
+        "5",
+        "4"
+    ],
+    "weapon": [
+        "sword",
+        "claymore",
+        "polearm",
+        "catalyst",
+        "bow"
+    ],
+    "role": [
+        "primary-damage",
+        "quick-swap",
+        "healer",
+        "shielder"
+    ]
+}
