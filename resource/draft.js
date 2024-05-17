@@ -244,7 +244,6 @@ function ban_random_chars(attr, value, count) {
             }
         }
     });
-    console.log(chars);
     ban_section = document.getElementById("character-pool-banned");
     for (let i = 0; i < count && chars.length > 0; i++) {
         char_index = Math.floor(Math.random() * chars.length);
