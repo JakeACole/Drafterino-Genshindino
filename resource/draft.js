@@ -179,20 +179,30 @@ function reset_teams() {
 
 function populate_ban_form(attributes) {
     let attr_dropdown = document.getElementById("ban-attribute");
+    let exclude_dropdown = document.getElementById("ban-exclude-attribute");
     for (attr in attributes) {
         var opt = document.createElement("option");
         opt.value = attr;
         opt.innerHTML = attr;
         attr_dropdown.appendChild(opt);
+        attributes[attr].forEach(attr_value => {
+            var exclude_opt = document.createElement("option");
+            let val = attr+"="+attr_value;
+            exclude_opt.value = val;
+            exclude_opt.innerHTML = val;
+            exclude_dropdown.appendChild(exclude_opt);
+        });
     }
     update_ban_form();
 }
 
 function update_ban_form(refresh=false) {
     let ban_prompt = document.getElementById("character-ban-prompt");
+    let exclude_prompt = document.getElementById("character-ban-exclude-prompt");
     let attr = document.getElementById("ban-attribute").value;
     if (attr == "none") {
         ban_prompt.classList.add("hidden");
+        exclude_prompt.classList.add("hidden");
     }
     else if (ban_prompt.classList.contains("hidden") || refresh == true) {
         let ban_value_select = document.getElementById("ban-value");
@@ -210,6 +220,7 @@ function update_ban_form(refresh=false) {
         });
 
         ban_prompt.classList.remove("hidden");
+        exclude_prompt.classList.remove("hidden");
     }
     // update text values
     document.getElementById("ban-quantity-text").innerHTML = document.getElementById("ban-quantity").value;
@@ -220,10 +231,17 @@ function ban_random_chars(attr, value, count) {
     // get list of chars with matching attr value
     let chars = []
     let avail_section = document.getElementById("character-pool-available");
+    let exclude = document.getElementById("ban-exclude").checked;
+    let exclude_str = document.getElementById("ban-exclude-attribute").value;
+    let exclude_split = exclude_str.split("=");
+    let exclude_attr = exclude_split[0];
+    let exclude_value = exclude_split[exclude_split.length-1];
     character_data.forEach(char => {
         character_elem = document.getElementById("character-" + char.name);
         if (char[attr] == value && character_elem.parentElement == avail_section) {
-            chars.push(char.name);
+            if (!exclude || char[exclude_attr] != exclude_value) {
+                chars.push(char.name);
+            }
         }
     });
     console.log(chars);

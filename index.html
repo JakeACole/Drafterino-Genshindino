@@ -51,6 +51,14 @@
                         <option selected="selected" value="each">each</option>
                     </select> <div id="ban-attribute-text">region</div>:
                 </div>
+                <div id="character-ban-exclude-prompt" class="character-ban-prompt hidden">
+                    <input type="checkbox" id="ban-exclude" name="ban-exclude" value="exclude">
+                    <label for="ban-exclude">Exclude </label>
+                    <select id="ban-exclude-attribute" name="ban-exclude-attribute">
+                        <!-- gets populated from JS -->
+                        <option selected="selected" value="none">none</option>
+                    </select>?
+                </div>
                 <button id="button-ban" class="ban-button">Ban!</button>
             </div>
         </div>
