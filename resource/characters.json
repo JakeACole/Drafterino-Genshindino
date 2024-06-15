@@ -154,6 +154,16 @@
         "weapon": "claymore"
     },
     {
+        "name": "clorinde",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "primary-damage",
+        "icon": "Clorinde_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "sword"
+    },
+    {
         "name": "collei",
         "star_rarity": 4,
         "region": "sumeru",
@@ -617,6 +627,16 @@
         "alt_icons": [],
         "element": "anemo",
         "weapon": "claymore"
+    },
+    {
+        "name": "sethos",
+        "star_rarity": 4,
+        "region": "sumeru",
+        "role": "primary-damage",
+        "icon": "Sethos_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "bow"
     },
     {
         "name": "shenhe",
