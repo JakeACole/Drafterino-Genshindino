@@ -226,6 +226,16 @@
         "weapon": "claymore"
     },
     {
+        "name": "emilie",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "quick-swap",
+        "icon": "Emilie_Icon.webp",
+        "alt_icons": [],
+        "element": "dendro",
+        "weapon": "polearm"
+    },
+    {
         "name": "eula",
         "star_rarity": 5,
         "region": "mondstadt",
@@ -404,7 +414,9 @@
         "region": "inazuma",
         "role": "shielder",
         "icon": "Kirara_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Phantom_in_Boots_Icon.webp"
+        ],
         "element": "dendro",
         "weapon": "sword"
     },
@@ -540,7 +552,9 @@
         "region": "sumeru",
         "role": "quick-swap",
         "icon": "Nilou_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Breeze_of_Sabaa_Icon.webp"
+        ],
         "element": "hydro",
         "weapon": "sword"
     },
@@ -649,6 +663,16 @@
         ],
         "element": "cryo",
         "weapon": "polearm"
+    },
+    {
+        "name": "sigewinne",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "healer",
+        "icon": "Sigewinne_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "bow"
     },
     {
         "name": "shikanoin-heizou",
