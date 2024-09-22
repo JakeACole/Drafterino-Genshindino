@@ -343,6 +343,16 @@
         "weapon": "sword"
     },
     {
+        "name": "kachina",
+        "star_rarity": 4,
+        "region": "natlan",
+        "role": "quick-swap",
+        "icon": "Kachina_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "polearm"
+    },
+    {
         "name": "kaedehara-kazuha",
         "star_rarity": 5,
         "region": "inazuma",
@@ -407,6 +417,16 @@
         ],
         "element": "electro",
         "weapon": "sword"
+    },
+    {
+        "name": "kinich",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "primary-damage",
+        "icon": "Kinich_Icon.webp",
+        "alt_icons": [],
+        "element": "dendro",
+        "weapon": "claymore"
     },
     {
         "name": "kirara",
@@ -513,6 +533,16 @@
         "alt_icons": [
             "Pact_of_Stars_and_Moon_Icon.webp"
         ],
+        "element": "hydro",
+        "weapon": "catalyst"
+    },
+    {
+        "name": "mualani",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "primary-damage",
+        "icon": "Mualani_Icon.webp",
+        "alt_icons": [],
         "element": "hydro",
         "weapon": "catalyst"
     },

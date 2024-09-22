@@ -49,6 +49,10 @@
         {
             "name": "fontaine",
             "file": "Emblem_Fontaine.webp"
+        },
+        {
+            "name": "natlan",
+            "file": "Emblem_Natlan.webp"
         }
     ],
     "weapon": [
