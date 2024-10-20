@@ -841,6 +841,16 @@
         "weapon": "polearm"
     },
     {
+        "name": "xilonen",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "healer",
+        "icon": "Xilonen_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "sword"
+    },
+    {
         "name": "xingqiu",
         "star_rarity": 4,
         "region": "liyue",
