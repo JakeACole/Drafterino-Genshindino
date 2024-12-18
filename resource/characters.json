@@ -124,6 +124,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "chasca",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "primary-damage",
+        "icon": "Chasca_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "bow"
+    },
+    {
         "name": "chevreuse",
         "star_rarity": 4,
         "region": "fontaine",
@@ -609,6 +619,16 @@
         "alt_icons": [],
         "element": "geo",
         "weapon": "claymore"
+    },
+    {
+        "name": "ororon",
+        "star_rarity": 4,
+        "region": "natlan",
+        "role": "quick-swap",
+        "icon": "Ororon_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "bow"
     },
     {
         "name": "qiqi",
