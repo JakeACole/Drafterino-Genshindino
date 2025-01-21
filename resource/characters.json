@@ -164,6 +164,16 @@
         "weapon": "claymore"
     },
     {
+        "name": "citlali",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "shielder",
+        "icon": "Citlali_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "catalyst"
+    },
+    {
         "name": "clorinde",
         "star_rarity": 5,
         "region": "fontaine",
@@ -335,7 +345,9 @@
         "region": "liyue",
         "role": "primary-damage",
         "icon": "Hu_Tao_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Cherries_Snow-Laden_Icon.webp"
+        ],
         "element": "pyro",
         "weapon": "polearm"
     },
@@ -523,6 +535,16 @@
         "alt_icons": [],
         "element": "pyro",
         "weapon": "bow"
+    },
+    {
+        "name": "mavuika",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "primary-damage",
+        "icon": "Mavuika_Icon.webp",
+        "alt_icons": [],
+        "element": "pyro",
+        "weapon": "claymore"
     },
     {
         "name": "mika",
