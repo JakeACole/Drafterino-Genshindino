@@ -1,5 +1,10 @@
 // drag-and-drop support
 
+var mousePosition = {
+  x: 0,
+  y: 0,
+};
+
 function enableDragSort(listClass) {
     const sortableLists = document.getElementsByClassName(listClass);
     Array.prototype.map.call(sortableLists, (list) => {enableDragList(list)});
@@ -11,16 +16,27 @@ function enableDragSort(listClass) {
   
   function enableDragItem(item) {
     item.setAttribute('draggable', true)
+    item.ondragstart = handleDragStart;
     item.ondrag = handleDrag;
     item.ondragend = handleDrop;
   }
+
+  function handleDragStart(event) {
+    event.dataTransfer.setData('text/plain', 'node');
+  }
   
   function handleDrag(item) {
+    item.preventDefault();
     let selectedItem = item.target;
 
     list = selectedItem.parentElement,
-    x = event.clientX,
-    y = event.clientY;
+    x = item.clientX,
+    y = item.clientY;
+
+    if (x == 0 && y == 0) {
+      x = mousePosition.x;
+      y = mousePosition.y;
+    }
     
     selectedItem.classList.add('drag-sort-active');
     let swapItem = document.elementFromPoint(x, y) === null ? selectedItem : document.elementFromPoint(x, y);
@@ -46,6 +62,12 @@ function enableDragSort(listClass) {
   }
   
   function handleDrop(item) {
+    item.preventDefault();
     let selectedItem = item.target;
     selectedItem.classList.remove('drag-sort-active');
   }
+
+  document.addEventListener("dragover", function (event) {
+    mousePosition.x = event.clientX;
+    mousePosition.y = event.clientY;
+  }, true);
