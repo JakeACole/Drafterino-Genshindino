@@ -849,8 +849,8 @@
         "role": "primary-damage",
         "icon": "Varesa_Icon.webp",
         "alt_icons": [],
-        "element": "catalyst",
-        "weapon": "electro"
+        "element": "electro",
+        "weapon": "catalyst"
     },
     {
         "name": "venti",
