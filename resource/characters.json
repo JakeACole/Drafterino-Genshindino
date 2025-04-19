@@ -340,6 +340,16 @@
         "weapon": "bow"
     },
     {
+        "name": "iansan",
+        "star_rarity": 4,
+        "region": "natlan",
+        "role": "quick-swap",
+        "icon": "Iansan_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "polearm"
+    },
+    {
         "name": "hu-tao",
         "star_rarity": 5,
         "region": "liyue",
@@ -831,6 +841,16 @@
         ],
         "element": "none",
         "weapon": "sword"
+    },
+    {
+        "name": "varesa",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "primary-damage",
+        "icon": "Varesa_Icon.webp",
+        "alt_icons": [],
+        "element": "catalyst",
+        "weapon": "electro"
     },
     {
         "name": "venti",
