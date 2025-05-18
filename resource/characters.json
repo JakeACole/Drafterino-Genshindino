@@ -256,6 +256,16 @@
         "weapon": "polearm"
     },
     {
+        "name": "escoffier",
+        "star_rarity": 5,
+        "region": "fontaine",
+        "role": "healer",
+        "icon": "Escoffier_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "polearm"
+    },
+    {
         "name": "eula",
         "star_rarity": 5,
         "region": "mondstadt",
@@ -340,16 +350,6 @@
         "weapon": "bow"
     },
     {
-        "name": "iansan",
-        "star_rarity": 4,
-        "region": "natlan",
-        "role": "quick-swap",
-        "icon": "Iansan_Icon.webp",
-        "alt_icons": [],
-        "element": "electro",
-        "weapon": "polearm"
-    },
-    {
         "name": "hu-tao",
         "star_rarity": 5,
         "region": "liyue",
@@ -360,6 +360,26 @@
         ],
         "element": "pyro",
         "weapon": "polearm"
+    },
+    {
+        "name": "iansan",
+        "star_rarity": 4,
+        "region": "natlan",
+        "role": "quick-swap",
+        "icon": "Iansan_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "polearm"
+    },
+    {
+        "name": "ifa",
+        "star_rarity": 4,
+        "region": "natlan",
+        "role": "healer",
+        "icon": "Ifa_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "catalyst"
     },
     {
         "name": "jean",
