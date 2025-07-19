@@ -214,6 +214,16 @@
         "weapon": "claymore"
     },
     {
+        "name": "dahlia",
+        "star_rarity": 4,
+        "region": "mondstadt",
+        "role": "shielder",
+        "icon": "Dahlia_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "sword"
+    },
+    {
         "name": "diluc",
         "star_rarity": 5,
         "region": "mondstadt",
@@ -795,6 +805,16 @@
         "alt_icons": [],
         "element": "anemo",
         "weapon": "catalyst"
+    },
+    {
+        "name": "skirk",
+        "star_rarity": 5,
+        "region": "none",
+        "role": "primary-damage",
+        "icon": "Skirk_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "sword"
     },
     {
         "name": "sucrose",
