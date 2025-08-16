@@ -392,6 +392,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "ineffa",
+        "star_rarity": 5,
+        "region": "natlan",
+        "role": "shielder",
+        "icon": "Ineffa_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "polearm"
+    },
+    {
         "name": "jean",
         "star_rarity": 5,
         "region": "mondstadt",
