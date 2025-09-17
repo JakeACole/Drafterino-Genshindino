@@ -53,6 +53,10 @@
         {
             "name": "natlan",
             "file": "Emblem_Natlan.webp"
+        },
+        {
+            "name": "nod-krai",
+            "file": "Emblem_Nod-Krai.webp"
         }
     ],
     "weapon": [

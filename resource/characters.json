@@ -1,5 +1,15 @@
 [
     {
+        "name": "aino",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "quick-swap",
+        "icon": "Aino_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "claymore"
+    },
+    {
         "name": "albedo",
         "star_rarity": 5,
         "region": "mondstadt",
@@ -308,6 +318,16 @@
         "weapon": "bow"
     },
     {
+        "name": "flins",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "primary-damage",
+        "icon": "Flins_Icon.webp",
+        "alt_icons": [],
+        "element": "electro",
+        "weapon": "polearm"
+    },
+    {
         "name": "freminet",
         "star_rarity": 4,
         "region": "fontaine",
@@ -394,7 +414,7 @@
     {
         "name": "ineffa",
         "star_rarity": 5,
-        "region": "natlan",
+        "region": "nod-krai",
         "role": "shielder",
         "icon": "Ineffa_Icon.webp",
         "alt_icons": [],
@@ -563,6 +583,16 @@
         "alt_icons": [],
         "element": "cryo",
         "weapon": "sword"
+    },
+    {
+        "name": "lauma",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "quick-swap",
+        "icon": "Lauma_Icon.webp",
+        "alt_icons": [],
+        "element": "dendro",
+        "weapon": "catalyst"
     },
     {
         "name": "lisa",
