@@ -1,7 +1,7 @@
 [
     {
         "name": "aino",
-        "star_rarity": 5,
+        "star_rarity": 4,
         "region": "nod-krai",
         "role": "quick-swap",
         "icon": "Aino_Icon.webp",
@@ -696,6 +696,16 @@
         "icon": "Neuvillette_Icon.webp",
         "alt_icons": [],
         "element": "hydro",
+        "weapon": "catalyst"
+    },
+    {
+        "name": "nefer",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "primary-damage",
+        "icon": "Nefer_Icon.webp",
+        "alt_icons": [],
+        "element": "dendro",
         "weapon": "catalyst"
     },
     {
