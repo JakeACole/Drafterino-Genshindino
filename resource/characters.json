@@ -266,6 +266,18 @@
         "weapon": "claymore"
     },
     {
+        "name": "durin",
+        "star_rarity": 5,
+        "region": "mondstadt",
+        "role": "quick-swap",
+        "icon": "Durin_Icon.webp",
+        "alt_icons": [
+            "Toward_the_Distant_Horizon_Icon.webp"
+        ],
+        "element": "pyro",
+        "weapon": "sword"
+    },
+    {
         "name": "emilie",
         "star_rarity": 5,
         "region": "fontaine",
@@ -420,6 +432,16 @@
         "alt_icons": [],
         "element": "electro",
         "weapon": "polearm"
+    },
+    {
+        "name": "jahoda",
+        "star_rarity": 4,
+        "region": "nod-krai",
+        "role": "quick-swap",
+        "icon": "Jahoda_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "bow"
     },
     {
         "name": "jean",
