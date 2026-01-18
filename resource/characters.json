@@ -204,6 +204,16 @@
         "weapon": "bow"
     },
     {
+        "name": "columbina",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "quick-swap",
+        "icon": "Columbina_Icon.webp",
+        "alt_icons": [],
+        "element": "hydro",
+        "weapon": "catalyst"
+    },
+    {
         "name": "cyno",
         "star_rarity": 5,
         "region": "sumeru",
@@ -437,7 +447,7 @@
         "name": "jahoda",
         "star_rarity": 4,
         "region": "nod-krai",
-        "role": "quick-swap",
+        "role": "healer",
         "icon": "Jahoda_Icon.webp",
         "alt_icons": [],
         "element": "anemo",
@@ -716,7 +726,9 @@
         "region": "fontaine",
         "role": "primary-damage",
         "icon": "Neuvillette_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Melusent_Gift_Icon.webp"
+        ],
         "element": "hydro",
         "weapon": "catalyst"
     },
@@ -936,7 +948,8 @@
         "icon": "Traveler_Icon.webp",
         "alt_icons": [
             "Aether_Icon.webp",
-            "Lumine_Icon.webp"
+            "Lumine_Icon.webp",
+            "As_Heaven_and_Earth_Are_Made_Anew_(Aether)_Icon.webp"
         ],
         "element": "none",
         "weapon": "sword"
@@ -949,7 +962,8 @@
         "icon": "Traveler_Icon.webp",
         "alt_icons": [
             "Aether_Icon.webp",
-            "Lumine_Icon.webp"
+            "Lumine_Icon.webp",
+            "As_Heaven_and_Earth_Are_Made_Anew_(Lumine)_Icon.webp"
         ],
         "element": "none",
         "weapon": "sword"
