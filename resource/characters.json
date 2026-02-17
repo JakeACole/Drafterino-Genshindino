@@ -434,6 +434,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "illuga",
+        "star_rarity": 4,
+        "region": "nod-krai",
+        "role": "quick-swap",
+        "icon": "Illuga_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "polearm"
+    },
+    {
         "name": "ineffa",
         "star_rarity": 5,
         "region": "nod-krai",
@@ -1098,7 +1108,9 @@
         "region": "liyue",
         "role": "healer",
         "icon": "Yaoyao_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Rainlit_Bamboo_Reverie_Icon.webp"
+        ],
         "element": "dendro",
         "weapon": "polearm"
     },
@@ -1151,5 +1163,15 @@
         "alt_icons": [],
         "element": "geo",
         "weapon": "polearm"
+    },
+    {
+        "name": "zibai",
+        "star_rarity": 5,
+        "region": "liyue",
+        "role": "primary-damage",
+        "icon": "Zibai_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "sword"
     }
 ]
