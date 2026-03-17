@@ -989,6 +989,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "varka",
+        "star_rarity": 5,
+        "region": "mondstadt",
+        "role": "primary-damage",
+        "icon": "Varka_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "claymore"
+    },
+    {
         "name": "venti",
         "star_rarity": 5,
         "region": "mondstadt",
