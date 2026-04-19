@@ -637,6 +637,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "linnea",
+        "star_rarity": 5,
+        "region": "nod-krai",
+        "role": "healer",
+        "icon": "Linnea_Icon.webp",
+        "alt_icons": [],
+        "element": "geo",
+        "weapon": "bow"
+    },
+    {
         "name": "lisa",
         "star_rarity": 4,
         "region": "mondstadt",
