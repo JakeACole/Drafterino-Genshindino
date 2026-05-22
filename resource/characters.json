@@ -659,6 +659,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "lohen",
+        "star_rarity": 5,
+        "region": "mondstadt",
+        "role": "primary-damage",
+        "icon": "Lohen_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "polearm"
+    },
+    {
         "name": "lynette",
         "star_rarity": 4,
         "region": "fontaine",
@@ -763,6 +773,16 @@
         "weapon": "catalyst"
     },
     {
+        "name": "nicole",
+        "star_rarity": 5,
+        "region": "mondstadt",
+        "role": "shielder",
+        "icon": "Nicole_Icon.webp",
+        "alt_icons": [],
+        "element": "pyro",
+        "weapon": "catalyst"
+    },
+    {
         "name": "nilou",
         "star_rarity": 5,
         "region": "sumeru",
@@ -805,6 +825,16 @@
         "alt_icons": [],
         "element": "electro",
         "weapon": "bow"
+    },
+    {
+        "name": "prune",
+        "star_rarity": 4,
+        "region": "mondstadt",
+        "role": "quick-swap",
+        "icon": "Prune_Icon.webp",
+        "alt_icons": [],
+        "element": "anemo",
+        "weapon": "catalyst"
     },
     {
         "name": "qiqi",
