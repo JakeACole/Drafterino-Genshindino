@@ -129,7 +129,9 @@
         "region": "fontaine",
         "role": "healer",
         "icon": "Charlotte_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Hurlock_Variations_Icon.webp"
+        ],
         "element": "cryo",
         "weapon": "catalyst"
     },
@@ -179,7 +181,9 @@
         "region": "natlan",
         "role": "shielder",
         "icon": "Citlali_Icon.webp",
-        "alt_icons": [],
+        "alt_icons": [
+            "Whispers_of_Stars_and_Smoke_Icon.webp"
+        ],
         "element": "cryo",
         "weapon": "catalyst"
     },
@@ -877,6 +881,16 @@
         ],
         "element": "cryo",
         "weapon": "polearm"
+    },
+    {
+        "name": "sandrone",
+        "star_rarity": 5,
+        "region": "snezhnaya",
+        "role": "primary-damage",
+        "icon": "Sandrone_Icon.webp",
+        "alt_icons": [],
+        "element": "cryo",
+        "weapon": "claymore"
     },
     {
         "name": "sangonomiya-kokomi",
